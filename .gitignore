@@ -2,3 +2,5 @@ test.json
 config.json
 main.py
 .vscode
+.venv
+pycache
