@@ -2,8 +2,11 @@ import json
 import typing
 from typing import Optional
 
-with open(f"config.json", "r") as f:  
-    config = json.load(f)  # Load the JSON data from the file
+try:
+    with open(f"config.json", "r") as f:  
+        config = json.load(f)  # Load the JSON data from the file
+except FileNotFoundError:
+    pass
 
 def get_user_input(prompt: Optional[str] = None):
     """
