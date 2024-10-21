@@ -1,8 +1,7 @@
 Setup commands:
 
-curl  -o Quickstart_to_programming.zip https://github.com/bryan6970/Quickstart_to_programming/archive/refs/heads/main.zip  
-Expand-Archive -Path Quickstart_to_programming.zip -DestinationPath Quickstart_to_programming
-Remove-Item -Path ".\Quickstart_to_programming.zip" -Force
-mv ".\Quickstart_to_programming\Quickstart_to_programming-main\*" "./Quickstart_to_programming"
-Remove-Item -Path "./Quickstart_to_programming/Quickstart_to_programming-main" -Recurse -Force	
-
+curl -L -o Quickstart_to_programming.zip https://github.com/bryan6970/Quickstart_to_programming/archive/refs/heads/main.zip
+powershell -Command "Expand-Archive -Path 'Quickstart_to_programming.zip' -DestinationPath 'Quickstart_to_programming' -Force" || tar -xf Quickstart_to_programming.zip -C Quickstart_to_programming
+del Quickstart_to_programming.zip || Remove-Item -Path ".\Quickstart_to_programming.zip" -Force
+move ".\Quickstart_to_programming\Quickstart_to_programming-main\*" ".\Quickstart_to_programming\" || mv ".\Quickstart_to_programming\Quickstart_to_programming-main\*" ".\Quickstart_to_programming\"
+rmdir /S /Q ".\Quickstart_to_programming\Quickstart_to_programming-main" || Remove-Item -Path ".\Quickstart_to_programming\Quickstart_to_programming-main" -Recurse -Force

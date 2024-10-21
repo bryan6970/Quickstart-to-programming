@@ -10,7 +10,9 @@ except FileNotFoundError:
 
 def get_user_input(prompt: Optional[str] = None):
     """
-    :param: prompt: What you want to ask the user\n**Wait for instructor to teach about this.**
+    Provides the user input.\n
+    :param: prompt: What you want to ask the user\n
+    :returns: User input
     """
     user_input = ""
     if prompt is not None:
